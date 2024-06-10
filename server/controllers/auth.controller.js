@@ -1,7 +1,7 @@
 import User from '../models/user.model.js';
 import bcryptjs from 'bcryptjs';
 
-export const signup = async (req, res) => {
+export const signup = async (req, res, next) => {
   try {
     const { username, email, password } = req.body;
     const haashPassword = bcryptjs.hashSync(password , 10);
@@ -13,7 +13,8 @@ export const signup = async (req, res) => {
       message : "user generated successfully"
     });
   } catch (err) {
-    res.json("something wrong happend")
-    console.log(err);
+    // res.status(500).json("something wrong happend")
+    // console.log(err);
+    next(err);
   }
 };
