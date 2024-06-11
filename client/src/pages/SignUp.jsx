@@ -33,10 +33,7 @@ const SignUp = () => {
         body: JSON.stringify(formData),
       });
 
-      // if (!res.ok) {
-      //   throw new error("Network response was not ok");
-      // }
-
+     
       const data = await res.json();
       if (data.success === false) {
         setLoading(false);
