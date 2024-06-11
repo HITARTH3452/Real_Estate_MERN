@@ -17,8 +17,8 @@ const app = express();
 
 app.use(express.json());
 
-app.listen(8080, () => {
-  console.log("Server is up and running on 8080!");
+app.listen(3000, () => {
+  console.log("Server is up and running on 3000!");
 });
 
 app.use("/api/user", userRouter);
