@@ -24,7 +24,7 @@ const SignUp = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    console.log("Form data before sending:", formData);
+    // console.log("Form data before sending:", formData);
     try {
       const res = await fetch("/api/auth/signup", {
         method: "POST",

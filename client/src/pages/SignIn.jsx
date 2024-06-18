@@ -15,7 +15,7 @@ const SignIn = () => {
     password: "",
   });
 
-  const { loading, error } = useSelector((state) => state.user);
+  const { loading, error } = useSelector((state) => state.userReducer);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
