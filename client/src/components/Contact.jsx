@@ -1,6 +1,8 @@
+/* eslint-disable react/prop-types */
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
+// eslint-disable-next-line react/prop-types
 export default function Contact({ listing }) {
   const [landlord, setLandlord] = useState(null);
   const [message, setMessage] = useState('');
@@ -11,6 +13,7 @@ export default function Contact({ listing }) {
   useEffect(() => {
     const fetchLandlord = async () => {
       try {
+        // eslint-disable-next-line react/prop-types
         const res = await fetch(`/api/user/${listing.userRef}`);
         const data = await res.json();
         setLandlord(data);
@@ -19,6 +22,7 @@ export default function Contact({ listing }) {
       }
     };
     fetchLandlord();
+  // eslint-disable-next-line react/prop-types
   }, [listing.userRef]);
   return (
     <>
