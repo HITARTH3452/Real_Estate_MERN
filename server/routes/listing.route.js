@@ -4,11 +4,13 @@ import { createListing , getUerListing , deleteListing, updateListing, getListin
 
 const router = express.Router();
 
-router.post('/create' , verifyToken , createListing); // To create a list for the user which is loged in already
+router.get('/get', getListings) // To get all lists present in database
+router.get('/get/:id' , getListing); // To get apecific list at which we clicked
 router.get('/:id' ,verifyToken , getUerListing); // Tp get the Lists of current user
+router.post('/create' , verifyToken , createListing); // To create a list for the user which is loged in already
 router.delete('/delete/:id' , verifyToken , deleteListing); // To delete specific list
 router.post('/update/:id' , verifyToken , updateListing); // To Update specific List
-router.get('/get/:id' , getListing); // To get apecific list at which we clicked
-router.get('/get' , getListings) // To get all lists present in database
+
+
 
 export default router;
